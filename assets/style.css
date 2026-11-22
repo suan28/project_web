@@ -1,0 +1,207 @@
+:root {
+  --ink: #14213d;
+  --ink-soft: #3d4a68;
+  --signage: #ffc22e;
+  --signage-dark: #e0a400;
+  --paper: #f2f5f8;
+  --line: #d9e0e8;
+  --ok: #1f8a5b;
+  --danger: #c8283d;
+}
+body { 
+  background: var(--paper); color: var(--ink); 
+  font-family: 'Figtree', system-ui, sans-serif; 
+}
+h1, h2, h3, h4, .brand { 
+  font-family: 'Bricolage Grotesque', 'Figtree', sans-serif; 
+  letter-spacing: -.01em; 
+}
+.topbar { 
+  background: var(--ink); 
+}
+.brand { 
+  color: #fff !important; 
+  font-weight: 700; font-size: 1.4rem; 
+}
+.brand span { 
+  color: var(--signage); 
+}
+.topbar .nav-link { 
+  color: rgba(255,255,255,.7); 
+  font-weight: 500; 
+}
+.topbar .nav-link:hover { 
+  color: #fff; 
+}
+.topbar .nav-link.active { 
+  color: var(--signage);
+}
+
+.btn-signage {
+  background: var(--signage); 
+  border-color: var(--signage); 
+  color: var(--ink); 
+  font-weight: 600; 
+}
+.btn-signage:hover { 
+  background: var(--signage-dark); 
+  border-color: var(--signage-dark);
+  color: var(--ink); 
+}
+.btn:focus-visible, .form-control:focus, .form-select:focus { 
+  box-shadow: 0 0 0 .2rem rgba(255,194,46,.55); 
+  border-color: var(--signage-dark); 
+}
+
+.panel { 
+  background: #fff; 
+  border: 1px solid var(--line); 
+  border-radius: 10px;
+  padding: 1.25rem; 
+}
+.panel h2, .panel h3 { 
+  font-size: 1.1rem; 
+  margin-bottom: 1rem; 
+}
+.stat { 
+  font-family: 'Bricolage Grotesque', sans-serif; 
+  font-size: 1.9rem; 
+  font-weight: 700; 
+  line-height: 1.1; 
+}
+.stat-label { 
+  color: var(--ink-soft); 
+  font-size: .9rem; 
+}
+
+.table > :not(caption) > * > * { 
+  padding: .65rem .75rem; 
+}
+.table thead th { 
+  background: var(--paper); 
+  color: var(--ink-soft); 
+  font-weight: 600; 
+  border-bottom: 1px solid var(--line); 
+}
+
+.menu-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+  gap: .75rem; 
+}
+.menu-item {
+  text-align: left; 
+  background: #fff; 
+  border: 1px solid var(--line); 
+  border-radius: 8px;
+  padding: .8rem; 
+  cursor: pointer; 
+  transition: border-color .12s, transform .12s;
+}
+.menu-item:hover:not(:disabled) { 
+  border-color: var(--signage-dark); 
+  transform: translateY(-2px); 
+}
+.menu-item:active:not(:disabled) { 
+  transform: translateY(0); 
+  background: #fff8e0; 
+}
+.menu-item:disabled { 
+  opacity: .45; 
+  cursor: not-allowed; 
+}
+.menu-item .nama { 
+  font-weight: 600; 
+  display: block; 
+  line-height: 1.25;
+   margin-bottom: .35rem; 
+  }
+.menu-item .harga { 
+  color: var(--ink-soft); 
+  font-size: .9rem; 
+}
+.chip { 
+  border: 1px solid var(--line); 
+  background: #fff; 
+  border-radius: 99px; 
+  padding: .3rem .9rem; 
+  font-size: .9rem; 
+  cursor: pointer; 
+}
+.chip.on { 
+  background: var(--ink); 
+  color: #fff; 
+  border-color: var(--ink);
+}
+.cart { 
+  position: sticky; 
+  top: 1rem; 
+}
+.cart-row { 
+  display: grid; 
+  grid-template-columns: 1fr auto; 
+  gap: .25rem .75rem; 
+  padding: .6rem 0; 
+  border-bottom: 1px dashed var(--line); 
+}
+.qty button { 
+  width: 28px; 
+  height: 28px; 
+  line-height: 1; 
+  padding: 0; 
+}
+.total-box { 
+  background: var(--ink); 
+  color: #fff; 
+  border-radius: 8px; 
+  padding: .9rem 1rem; 
+}
+.total-box .angka { 
+  font-family: 'Bricolage Grotesque', sans-serif; 
+  font-size: 1.8rem; 
+  font-weight: 700; 
+  color: var(--signage); 
+}
+
+.login-wrap { 
+  min-height: 100vh; 
+  display: grid; 
+  place-items: center; 
+  padding: 1rem;
+  background: var(--ink); 
+}
+.login-card { 
+  width: 100%; 
+  max-width: 380px; 
+  background: #fff; 
+  border-radius: 12px; 
+  padding: 2rem; 
+}
+
+.struk { 
+  max-width: 320px; 
+  margin: 1.5rem auto; 
+  background: #fff; 
+  padding: 1.25rem; 
+  font-family: 'Courier New', monospace; 
+  font-size: .85rem; 
+  border: 1px solid var(--line); 
+}
+.struk hr { 
+  border-top: 1px dashed #000; 
+  opacity: 1; 
+}
+@media print {
+  body { 
+    background: #fff; 
+  }
+  .no-print { 
+    display: none !important; 
+  }
+  .struk { 
+    border: 0; margin: 0 auto; 
+  }
+}
+@media (prefers-reduced-motion: reduce) { 
+  * { transition: none !important; } 
+}
